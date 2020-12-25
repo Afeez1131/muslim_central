@@ -14,8 +14,8 @@ def make_folder(title, name):
 	except OSError as e:
 		if e.errno == errno.EEXIST:
 			print('Directory not created.')
-	else:
-		raise e
+		else:
+			raise e
 	return folder_name
 
 def get_javascript(url):
@@ -48,6 +48,7 @@ def find_para(soup_content):
 
 	return title, name, url_list, folder_name
 # title, name, url_list, folder_name = (find_para(get_javascript('https://muslimcentral.com/series/bilal-ismail-yassarnal-quran/')))
+
 def download(url_list, folder_name):
 	'''
 	get the url list and loop through them, using the folder, name joined together with the file_name gotten from the url_list object and then download each file.
